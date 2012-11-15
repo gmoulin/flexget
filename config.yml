@@ -1,7 +1,3 @@
-#
-# Created by: Jeff Wilson <jeff@jeffalwilson.com>
-#
-
 presets:
   global:
     # Make there's 10GB free before adding more downloads
@@ -49,6 +45,7 @@ presets:
     # This is a TON of feeds, you probably don't need so many, but why not?
     inputs:
       - rss: { url: 'http://rss.bt-chat.com/?group=3', silent: yes }            # BT-Chat (EZTV)
+      - rss: { url: 'http://rss.bt-chat.com/?group=2', silent: yes }            # BT-Chat (VTV)
       - rss: { url: 'http://www.torlock.com/television/rss.xml', silent: yes }  # TorLock (TV)
       - rss: { url: 'http://torrentz.eu/feed_verified?q=tv', silent: yes }      # Torrentz (Verified only, TV)
       - rss: { url: 'http://ezrss.it/feed/', silent: yes }                      # EZRSS
@@ -60,11 +57,13 @@ presets:
     # Prevent from downloading shows that were aquired manually
     # or are currently downloading
     exists_series:
-      - "/mnt/storage/series/"
-      - "/mnt/storage/animations/"
-      - "/mnt/storage/documentaries/"
-      - "/mnt/tampon/torrent/loading/"
-      - "/mnt/tampon/torrent/complete/"
+      - '/mnt/storage/new/'
+      - '/mnt/storage/toSort/'
+      - '/mnt/storage/series/'
+      - '/mnt/storage/animations/'
+      - '/mnt/storage/documentaries/'
+      - '/mnt/tampon/torrent/loading/'
+      - '/mnt/tampon/torrent/complete/'
     # Look up info on TheTVDB.com to fill in extra info
     thetvdb_lookup: yes
     # Add accepted entries to Deluge and make sure they end up in the correct folder with a nice name
@@ -115,7 +114,7 @@ presets:
     # Add to deluge, but don't queue to top (My_TV_Shows are more important) and put in a different
     # location
     set:
-      movedone: /mnt/storage/premiere/
+      movedone: /mnt/storage/premieres/
       queuetotop: no
       label: tv-premiere
 
