@@ -2,31 +2,19 @@ series:
   settings:
     best:
       quality: hdtv+ <=720p !10bit
-      target: <720p
+      target: 720p
       timeframe: 6 hours
       propers: 12 hours
     better:
       quality: hdtv+ <=720p !10bit
-      target: <720p
+      target: 720p
       timeframe: 6 hours
       propers: 12 hours
     average:
       quality: hdtv+ <=720p !10bit
-      target: <720p
+      target: 720p
       timeframe: 6 hours
       propers: 12 hours
-    missing_japanimes:
-      quality: tvrip+ <=720p !10bit
-      #from_group:
-        #- TWWF
-        #- SSF
-        #- Fansub-Resistance
-    missing_shows:
-      quality: tvrip+ <=720p !10bit
-      upgrade: yes
-    #complete:
-      #quality: hdtv+ <=720p !10bit
-      #upgrade: yes
   # These are my favorite shows, I want the best quality from these
   best:
     - Arrow:
@@ -54,9 +42,9 @@ series:
     - Elementary
     - Leverage
     - Merlin
-    - Once Upon a Time
     - Primeval
-    - Revolution
+    - 'Primeval: New World'
+    - 'Revolution 2012'
     - 'Star Wars - The Clone Wars'
     - The Borgias
     - The Mentalist
@@ -70,57 +58,3 @@ series:
     - Human Target
     - Teen Wolf
     - Torchwood
-  #finished shows that need to be fully downloaded or completed
-  missing_japanimes:
-    - Accel World
-    - 'Albator 78'
-    - 'Albator 84'
-    - 'Avatar: The Last Airbender'
-    - 'Avatar: The Legend of Aang'
-    - 'Avatar: The Legend of Korra'
-    - City Hunter
-    - Cowboy Bebop
-    - Deadman Wonderland
-    - Escaflowne
-    - Naruto
-    - Naruto Shippuden
-    - Neon Genesis Evangelion
-    - One Piece
-    - Space Adventure Cobra
-    - Space Battleship Yamato
-    - Star Blazers
-    - Strait Jacket
-    - Vampire Hunter D
-    - WitchBlade
-  missing_shows:
-    - Aeon Flux
-    - 'Babylon 5'
-    - 'Babylon 5 Crusade'
-    - 'Batman: The Animated Series'
-    - 'Buck Rogers in the 25th Century'
-    - Caprica
-    - Dead Like Me
-    - Dollhouse
-    - Farscape
-    - Firefly
-    - Highlander
-    - 'Highlander: The Raven'
-    - Jericho
-    - Quantum Leap
-    - Sliders
-    - 'Star Trek: Deep Space Nine'
-    - 'Star Trek: The Next Generation'
-    - 'Star Trek: The Original Series'
-    - Stargate Universe
-    - Stargate Atlantis
-    - 'Space: Above and Beyond'
-    - The Penguins of Madagascar
-    - 'Terminator: The Sarah Connor Chronicles'
-  # Complete shows and animes, for reference
-  #complete:
-    #- Andromeda
-    #- Berzerk
-    #- Full Metal Alchemist
-    #- Claymore
-    #- Fate Stay Night
-    #- Bullet In The Face

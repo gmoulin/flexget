@@ -1,0 +1,72 @@
+series:
+  settings:
+    missing_japanimes:
+      quality: tvrip+ <=720p !10bit
+      #from_group:
+        #- TWWF
+        #- SSF
+        #- Fansub-Resistance
+    missing_top_shows:
+      quality: hdtv+ <=720p !10bit
+      #upgrade: yes
+    missing_shows:
+      quality: tvrip+ <=720p !10bit
+  missing_japanimes:
+    - Accel World
+    - 'Albator 78'
+    - 'Albator 84'
+    - 'Avatar: The Last Airbender'
+    - 'Avatar: The Legend of Aang'
+    - 'Avatar: The Legend of Korra'
+    - City Hunter
+    - Cowboy Bebop
+    - Deadman Wonderland
+    - Escaflowne
+    - Naruto
+    - Naruto Shippuden
+    - Neon Genesis Evangelion
+    - One Piece
+    - Space Adventure Cobra
+    - Space Battleship Yamato
+    - Star Blazers
+    - Strait Jacket
+    - Vampire Hunter D
+    - WitchBlade
+  missing_top_shows:
+    - Bones
+    - Burn Notice
+    - Dollhouse
+    - Falling Skies
+    - Fringe
+    - Grimm
+    - Lost Girl
+    - Nikita
+    - Spartacus
+    - Supernatural
+  missing_shows:
+    - Alphas
+    - Aeon Flux
+    - 'Babylon 5'
+    - 'Babylon 5 Crusade'
+    - 'Batman: The Animated Series'
+    - 'Buck Rogers in the 25th Century'
+    - Caprica
+    - Dead Like Me
+    - Death Valley
+    - Farscape
+    - Firefly
+    - 'Highlander: The Raven'
+    - Jericho
+    - Leverage
+    - Quantum Leap
+    - Sliders
+    - 'Star Trek: Deep Space Nine'
+    - 'Star Trek: The Next Generation'
+    - 'Star Trek: The Original Series'
+    - Stargate Universe
+    - Stargate Atlantis
+    - 'Space: Above and Beyond'
+    - The Borgias
+    - The Mentalist
+    - The Penguins of Madagascar
+    - 'Terminator: The Sarah Connor Chronicles'
