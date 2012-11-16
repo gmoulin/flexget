@@ -19,6 +19,7 @@ presets:
         - \bscreener\b: {from: title}
         - \bTS\b: {from: title}
         - \bCam\b: {from: title}
+        - \bRAW\b: {from: title}
     torrent_alive: 20 # Require at least 20 seeds of any torrent
     # Filter by filenames. Allow multiple video types and rar packs (but note if there is just a
     # single .rar file it won't be accepted)
@@ -29,8 +30,10 @@ presets:
         - '*.mp4'
     # Limit the frequency of requests to domains so they don't complain about using a bot
     domain_delay:
-      bt-chat.com: 5 seconds
-      torrentz.eu: 5 seconds
+      bt-chat.com: 15 seconds
+      torrentz.eu: 15 seconds
+      kat.ph: 15 seconds
+      ezrss.it: 15 seconds
     deluge:
       main_file_only: yes
 
@@ -43,6 +46,17 @@ presets:
   # We keep all of the RSS feeds that list tv-related torrents here
   # as well as where to check existing shows.
   tv-global:
+    discover:
+      what:
+        - listdir:
+          - '/mnt/storage/series/'
+          - '/mnt/storage/animations/'
+          - '/mnt/storage/missing/'
+      from:
+        - search_rss: https://www.ezrss.it/search/index.php?show_name={{search_term}}&mode=rss
+        - search_rss: http://torrentz.eu/feed?q={{search_term}}
+        - search_rss: http://www.kat.ph/usearch/{{search_term}}/?field=time_add&sorder=desc&rss=1
+      type: any
     # This is a TON of feeds, you probably don't need so many, but why not?
     inputs:
       - rss: { url: 'http://rss.bt-chat.com/?group=3', silent: yes }            # BT-Chat (EZTV)
@@ -52,6 +66,8 @@ presets:
       #- rss: { url: 'http://ezrss.it/feed/', silent: yes }                      # EZRSS
       - rss: { url: 'http://showrss.karmorra.info/rss.php?user_id=108961&hd=2&proper=1', silent: yes } # Karmorra (personal)
       - rss: { url: 'http://www.nyaa.eu/?page=rss', silent: yes }               #NYAATORRENT
+      - rss: { url: 'http://rss.bt-chat.com/?cat=2', silent: yes }            # BT-Chat (category TV)
+    torrentz: good
     # Impose reasonable size constraints
     content_size:
       max: 8000

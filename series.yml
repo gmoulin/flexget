@@ -24,9 +24,9 @@ series:
     missing_shows:
       quality: tvrip+ <=720p !10bit
       upgrade: yes
-    complete:
-      quality: hdtv+ <=720p !10bit
-      upgrade: yes
+    #complete:
+      #quality: hdtv+ <=720p !10bit
+      #upgrade: yes
   # These are my favorite shows, I want the best quality from these
   best:
     - Arrow:
@@ -117,10 +117,10 @@ series:
     - The Penguins of Madagascar
     - 'Terminator: The Sarah Connor Chronicles'
   # Complete shows and animes, for reference
-  complete:
-    - Andromeda
-    - Berzerk
-    - Full Metal Alchemist
-    - Claymore
-    - Fate Stay Night
-    - Bullet In The Face
+  #complete:
+    #- Andromeda
+    #- Berzerk
+    #- Full Metal Alchemist
+    #- Claymore
+    #- Fate Stay Night
+    #- Bullet In The Face
