@@ -10,7 +10,7 @@ presets:
     # RegExr (http://www.gskinner.com/RegExr/) is a great tool for testing regexes
     regexp:
       reject:
-        - (s|d)ub(s|bed)?\b: {from: title}                    # Block any subbed/dubbed/etc videos
+        #- (s|d)ub(s|bed)?\b: {from: title}                    # Block any subbed/dubbed/etc videos
         - \b(duo|tri|quadri|tetra|penta)logy\b: {from: title} # Block series, only accept one at a time
         - \b3-?D\b: {from: title}                             # I don't have any 3D displays
         - \btrailer\b: {from: title}                          # I've gotten a few trailers that matched as movies. VERY annoying
@@ -31,7 +31,8 @@ presets:
     domain_delay:
       bt-chat.com: 5 seconds
       torrentz.eu: 5 seconds
-    deluge: yes
+    deluge:
+      main_file_only: yes
 
   rssout:
     make_rss:
@@ -48,8 +49,9 @@ presets:
       - rss: { url: 'http://rss.bt-chat.com/?group=2', silent: yes }            # BT-Chat (VTV)
       - rss: { url: 'http://www.torlock.com/television/rss.xml', silent: yes }  # TorLock (TV)
       - rss: { url: 'http://torrentz.eu/feed_verified?q=tv', silent: yes }      # Torrentz (Verified only, TV)
-      - rss: { url: 'http://ezrss.it/feed/', silent: yes }                      # EZRSS
+      #- rss: { url: 'http://ezrss.it/feed/', silent: yes }                      # EZRSS
       - rss: { url: 'http://showrss.karmorra.info/rss.php?user_id=108961&hd=2&proper=1', silent: yes } # Karmorra (personal)
+      - rss: { url: 'http://www.nyaa.eu/?page=rss', silent: yes }               #NYAATORRENT
     # Impose reasonable size constraints
     content_size:
       max: 8000
@@ -68,9 +70,9 @@ presets:
     thetvdb_lookup: yes
     # Add accepted entries to Deluge and make sure they end up in the correct folder with a nice name
     set:
-      # Rename the "content file" to something nice
+      # Rename the "content file" to something nice, deluge specific
       content_filename: >
-        {{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}.{{ location[-3:] }}
+        {{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}
       label: tv
 
   # These are the shows I regularly watch
@@ -142,7 +144,7 @@ tasks:
   emailfeed:
     interval: 1 days
     rss:
-      url: /~/downloaded.rss
+      url: file:///home/gmoulin/downloaded.rss
     disable_builtins: [seen]
     accept_all: yes
     include: [ private/smtp.yml ]

@@ -25,9 +25,6 @@ tasks:
     # Where to get the metadata
     # This is needed to get my TVDB offset values
     include: [series.yml]
-    all_series:
-      # Don't actually filter
-      parse_only: yes
     # Don't attempt to move if we don't have valid metadata
     require_field: series_name
     move:
@@ -47,12 +44,33 @@ tasks:
     # Where to get the metadata
     # This is needed to get my TVDB offset values
     series:
-      - Iron Man Armored Adventures
+      - Accel World
+      - Aeon Flux
+      - 'Albator 78'
+      - 'Albator 84'
+      - 'Avatar: The Last Airbender'
+      - 'Avatar: The Legend of Aang'
+      - 'Avatar: The Legend of Korra'
+      - City Hunter
+      - Cowboy Bebop
+      - Deadman Wonderland
       - DreamWorks Dragons Riders of Berk
+      - Escaflowne
+      - Iron Man Armored Adventures
+      - Naruto
+      - Naruto Shippuden
+      - Neon Genesis Evangelion
+      - One Piece
+      - Space Adventure Cobra
+      - Space Battleship Yamato
+      - Star Blazers
       - Star Wars - The Clone Wars
+      - Strait Jacket
+      - The Penguins of Madagascar
       - 'Tron: Uprising'
-      # Don't actually filter
-      parse_only: yes
+      - Ultimate Spider-Man
+      - Vampire Hunter D
+      - WitchBlade
     # Don't attempt to move if we don't have valid metadata
     require_field: series_name
     move:
@@ -70,9 +88,7 @@ tasks:
     # Where to get the metadata
     # This is needed to get my TVDB offset values
     series:
-      - TODO
-      # Don't actually filter
-      parse_only: yes
+      - The Universe
     # Don't attempt to move if we don't have valid metadata
     require_field: series_name
     move:
