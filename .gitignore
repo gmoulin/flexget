@@ -1,4 +1,6 @@
 private/
+received/
+tmp/
 *.log
 *.log*
 *.sqlite

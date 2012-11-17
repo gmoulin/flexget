@@ -86,7 +86,7 @@ presets:
     include: [ series.yml ]
     # Add accepted entries to Deluge, queue them to the top and make sure they end up in the correct folder
     set:
-      movedone: /mnt/storage/new/
+      movedone: /mnt/tampon/torrent/complete/
       queuetotop: yes
 
   # I'm always up for new shows, but some I genres I just can't stand. This preset
@@ -125,7 +125,7 @@ presets:
     # location
     set:
       movedone: /mnt/storage/premieres/
-      queuetotop: no
+      queuetotop: yes
       label: tv-premiere
 
 # This is where we pull everything together
