@@ -20,6 +20,7 @@ presets:
         - \bTS\b: {from: title}
         - \bCam\b: {from: title}
         - \bRAW\b: {from: title}
+        - \bSpeed.Cd\b: {from: title} #slow
     #torrent_alive: { min_seeds: 3, reject_for: 10 minutes }
     # Filter by filenames. Allow multiple video types and rar packs (but note if there is just a
     # single .rar file it won't be accepted)
@@ -34,6 +35,10 @@ presets:
       torrentz.eu: 15 seconds
       kat.ph: 15 seconds
       ezrss.it: 15 seconds
+      h33t.com: 15 seconds
+      torlock.com: 15 seconds
+      tokyotosho.info: 15 seconds
+      nyaa.eu: 15 seconds
     deluge:
       main_file_only: yes
       user: local
@@ -50,13 +55,15 @@ presets:
   tv-global:
     # This is a TON of feeds, you probably don't need so many, but why not?
     inputs:
-      - rss: { url: 'http://ezrss.it/feed/', silent: yes }                      # EZRSS
-      - rss: { url: 'http://rss.bt-chat.com/?group=3', silent: yes }            # BT-Chat (EZTV)
-      - rss: { url: 'http://rss.bt-chat.com/?group=2', silent: yes }            # BT-Chat (VTV)
-      #- rss: { url: 'http://www.torlock.com/television/rss.xml', silent: yes }  # TorLock (TV)
-      #- rss: { url: 'http://torrentz.eu/feed_verified?q=tv', silent: yes }      # Torrentz (Verified only, TV)
-      - rss: { url: 'http://showrss.karmorra.info/rss.php?user_id=108961&hd=2&proper=1', silent: yes } # Karmorra (personal)
-      #- rss: { url: 'http://rss.bt-chat.com/?cat=2', silent: yes }            # BT-Chat (category TV)
+      - rss: { url: 'http://ezrss.it/feed/' }                      # EZRSS
+      - rss: { url: 'http://rss.bt-chat.com/?group=3' }            # BT-Chat (EZTV)
+      - rss: { url: 'http://rss.bt-chat.com/?group=2' }            # BT-Chat (VTV)
+      - rss: { url: 'http://h33t.com/rss' }                        # H33T (better tracker list)
+      - rss: { url: 'http://www.torlock.com/television/rss.xml' }  # TorLock (TV)
+      - rss: { url: 'http://torrentz.eu/feed_verified?q=tv' }      # Torrentz (Verified only, TV)
+      - rss: { url: 'http://rss.bt-chat.com/?cat=2' }            # BT-Chat (category TV)
+      - rss: { url: 'http://tokyotosho.info/rss.php?filter=1&entries=450' }
+      - rss: { url: 'http://www.nyaa.eu/?page=rss' }
     # Impose reasonable size constraints
     content_size:
       max: 8000
@@ -65,12 +72,12 @@ presets:
     # or are currently downloading
     exists_series:
       - '/mnt/storage/new/'
-      - '/mnt/storage/toSort/'
       - '/mnt/storage/series/'
       - '/mnt/storage/animations/'
       - '/mnt/storage/documentaries/'
       - '/mnt/tampon/torrent/loading/'
       - '/mnt/tampon/torrent/complete/'
+      - '/mnt/tampon/torrent/to move/'
     # Look up info on TheTVDB.com to fill in extra info
     thetvdb_lookup: yes
     # Add accepted entries to Deluge and make sure they end up in the correct folder with a nice name
@@ -103,7 +110,6 @@ presets:
         - talk show: {from: series_genres}
         - game show: {from: series_genres}
         - reality: {from: series_genres}
-        - children: {from: series_genres}
         - home and garden: {from: series_genres}
     if:
       # Block these genres only if they are the ONLY genre listed in series_genres
@@ -156,3 +162,19 @@ tasks:
     disable_builtins: [seen]
     accept_all: yes
     include: [ private/smtp.yml ]
+
+  seed_series_db:
+    # The find plugin will find all of your existing episodes
+    find:
+      regexp: .*(avi|mkv|mp4)$
+      path:
+        - '/mnt/storage/new/'
+        - '/mnt/storage/series/'
+        - '/mnt/storage/animations/'
+        - '/mnt/storage/documentaries/'
+        - '/mnt/tampon/torrent/loading/'
+        - '/mnt/tampon/torrent/complete/'
+        - '/mnt/tampon/torrent/to move/'
+      recursive: yes
+    preset: tv-global
+    manual: yes

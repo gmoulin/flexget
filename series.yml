@@ -7,12 +7,27 @@ series:
       propers: 12 hours
     better:
       quality: hdtv+ <=720p !10bit
-      target: 720p
+      target: <720p
       timeframe: 6 hours
       propers: 12 hours
     average:
       quality: hdtv+ <=720p !10bit
-      target: 720p
+      target: <720p
+      timeframe: 6 hours
+      propers: 12 hours
+    documentaries:
+      quality: hdtv+ <=720p !10bit
+      target: <720p
+      timeframe: 6 hours
+      propers: 12 hours
+    anime:
+      quality: hdtv+ <=720p !10bit
+      target: <720p
+      timeframe: 6 hours
+      propers: 12 hours
+    japanime:
+      quality: hdtv+ <=720p !10bit
+      target: <720p
       timeframe: 6 hours
       propers: 12 hours
   # These are my favorite shows, I want the best quality from these
@@ -24,6 +39,7 @@ series:
     - Burn Notice
     - Continuum
     - Dexter
+    - Defiance
     - Falling Skies
     - Fringe
     - Game of Thrones
@@ -38,23 +54,37 @@ series:
     - Alphas
     - Body of Proof
     - Death Valley
-    - DreamWorks Dragons Riders of Berk
+    - Doctor Who
     - Elementary
+    - Justified
     - Leverage
     - Merlin
     - Primeval
-    - 'Primeval: New World'
-    - 'Revolution 2012'
-    - 'Star Wars - The Clone Wars'
+    - Once Upon a Time
+    - Primeval New World
+    - Revolution 2012
     - The Borgias
     - The Mentalist
     - The Universe
     - The Walking Dead
-    - 'Tron: Uprising'
-    - Ultimate Spider-Man
+    - Torchwood
   # And this is everything else, quality doesn't matter that much
   average:
-    - Last Resort
-    - Human Target
-    - Teen Wolf
-    - Torchwood
+    - Transporter The Series
+  documentaries:
+    - Snow Babies
+  anime:
+    - Dragons Riders of Berk
+    - 'Star Wars - The Clone Wars'
+    - Tron Uprising
+    - 'Ultimate Spider-Man'
+  japanime:
+    - Naruto Shippuuden:
+        from_group:
+          - HorribleSubs
+          - Taka
+    - One Piece:
+        from_group:
+          - Yibis
+          - HorribleSubs
+          - BKT
